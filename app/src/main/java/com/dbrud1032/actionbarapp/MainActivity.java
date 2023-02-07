@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -104,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
 
                         try {
+                            Log.i("ACTIONBAR_APP", response.getJSONArray("data").toString());
+                            Log.i("ACTIONBAR_APP", response.getJSONArray("data").getJSONObject(1).toString());
+
                             JSONArray data = response.getJSONArray("data");
 
                             for ( int i=0; i<data.length(); i++ ){
